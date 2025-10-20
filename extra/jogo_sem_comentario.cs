@@ -11,32 +11,27 @@ namespace ConsoleApp3
             while (fecharJogo == false)
             {
                 //Variaveis do jogo:
-                string opcao = ""; // Sele√ß√£o dos Com√¥dos da Casa
-                string iniciar = ""; // Sele√ß√£o Inicial (Se desejas ajudar ou n√£o ao Marik) 
-                int pontos = 100; // Pontua√ß√£o do Jogo
+                string opcao = ""; // SeleÁ„o dos ComÙdos da Casa
+                string iniciar = ""; // SeleÁ„o Inicial (Se desejas ajudar ou n„o ao Marik) 
+                int pontos = 100; // PontuaÁ„o do Jogo
 
-                //Cores padr√µes do jogo:
+                //Cores padrıes do jogo:
                 ConsoleColor caixaTextoCor = ConsoleColor.Cyan;
                 ConsoleColor opinioesCor = ConsoleColor.Red;
                 ConsoleColor pontuacaoCor = ConsoleColor.Yellow;
 
                 int comodoAtual = 7; // Comodo Atual do Jogador
-                                     /*
-                                      0 - Escritorio
-                                      1 - Banheiro Principal
-                                      2 - Sala de TV
-                                      3 - Quarto
-                                      4 - Banheiro do Quarto
-                                      5 - Cozinha
-                                      6 - Quintal
-                                      7 - Sala Principal
-                                      */
-                string[] comodos = new string[7]; // Comodos da casa, com exce√ß√£o da sala principal.
-                                                  /*
-                                                   Obs.: Quando o comodos[i] = "P", significa que o item 'perdido' est√° neste comodo. (O jogador finalizar√° a partida quando visistar este comodo)
-                                                   Caso o comodos[i] = "", significa que o item 'perdido' n√£o est√° neste comodo. (O jogador perder√° pontos, quando visitar este comodo)
-                                                   E por ultimo, caso o comodos[i] = "N", significa que o item 'perdido' n√£o se encontra neste comodo e o jogador j√° passou pelo mesmo. (O jogador n√£o perder√° pontos)
-                                                   */
+                /*
+                0 - Escritorio
+                1 - Banheiro Principal
+                2 - Sala de TV
+                3 - Quarto
+                4 - Banheiro do Quarto
+                5 - Cozinha
+                6 - Quintal
+                7 - Sala Principal
+                */
+                string[] comodos = new string[7]; // Comodos da casa, com exceÁ„o da sala principal.
                 comodos[0] = "P"; // Escritorio
                 comodos[1] = ""; // Banheiro Principal
                 comodos[2] = ""; // Sala de TV
@@ -47,41 +42,41 @@ namespace ConsoleApp3
 
                 //Sortear Comodo do Brinquedo:
                 Random r = new Random();
-                bool briquedoPerdido = false; //Verifica se o brinquedo do dog foi sorteado em algum comodo.
+                bool briquedoPerdido = false;
 
-                for (int i = 0; i < comodos.Length; i++) // Ir√° percorrer a array dos comodos desde o comodos[0] at√© o comodos[6] e ir√° informar se o comodo ter√° o item perdido ou n√£o.
+                for (int i = 0; i < comodos.Length; i++)
                 {
-                    if (briquedoPerdido == false) // Verifica se o item j√° foi perdido (se for falso, o item ainda n√£o foi definido em que comodo estar√°).
+                    if (briquedoPerdido == false)
                     {
-                        int verificar = r.Next(0, 2); //Ir√° sortear valores entre 0 a 1.
-                        if (verificar > 0) // Se o numero sorteado for igual a 1, ele ir√° armazenar o item perdido no comodo referente ao comodos[i].
+                        int verificar = r.Next(0, 2); //Ir· sortear valores entre 0 a 1.
+                        if (verificar > 0)
                         {
-                            briquedoPerdido = true; // Declara que o item j√° foi sorteado, por tanto os demais ser√£o considerados "".
+                            briquedoPerdido = true;
                             comodos[i] = "P";
                         }
-                        else if (i == (comodos.Length - 1)) // Caso o item n√£o seja sorteado em nenhum outro comodo anterior, ele ir√° garantir que o item seja armazenado no ultimo comodo.
+                        else if (i == (comodos.Length - 1))
                         {
                             comodos[i] = "P";
                             briquedoPerdido = true;
                         }
-                        else // Caso o valorsorteado seja 0, o comodo receber√° o valor de "".
+                        else
                         {
                             comodos[i] = "";
                         }
                     }
-                    else // Caso o item tenha sido sorteado, ele ir√° declarar os demais como ""
+                    else
                     {
                         comodos[i] = "";
                     }
                 }
                 //Fim - Sortear Comodo do Brinquedo.
 
-                //Introdu√ß√£o:
+                //IntroduÁ„o:
                 Console.Clear();
                 Console.ForegroundColor = caixaTextoCor;
                 Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
-                Console.WriteLine("\t Marik √© um cachorrinho muito agitado!\n");
-                Console.WriteLine("\t Ele adora brincar e brincar, comer √†s vezes e claro... Brincar...\n");
+                Console.WriteLine("\t Marik È um cachorrinho muito agitado!\n");
+                Console.WriteLine("\t Ele adora brincar e brincar, comer ‡s vezes e claro... Brincar...\n");
                 Console.WriteLine("\t\n");
                 Console.WriteLine("\t\n");
                 Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#");
@@ -92,8 +87,8 @@ namespace ConsoleApp3
                 Console.Clear();
                 Console.ForegroundColor = caixaTextoCor;
                 Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
-                Console.WriteLine("\t Por√©m, seus donos costumam ir trabalhar uma vez na semana...\n");
-                Console.WriteLine("\t Pois √©.. Quem trabalha uma vez na semana, em?\n");
+                Console.WriteLine("\t PorÈm, seus donos costumam ir trabalhar uma vez na semana...\n");
+                Console.WriteLine("\t Pois È.. Quem trabalha uma vez na semana, em?\n");
                 Console.WriteLine("\t Marik acaba ficando sozinho em casa, apesar de conviver com uma gata que vive se escondendo dele...\n");
                 Console.WriteLine("\t E pra piorar... Marik deixou o seu brinquedo favorito dentro de casa...\n");
                 Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#");
@@ -106,9 +101,9 @@ namespace ConsoleApp3
                     Console.Clear();
                     Console.ForegroundColor = caixaTextoCor;
                     Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
-                    Console.WriteLine("\t Ap√≥s uns 3 minutos entediado no quintal... Marik finalmente decidiu u.u\n");
-                    Console.WriteLine("\t Ele ir√° atr√°s do seu brinquedo favorito!\n");
-                    Console.WriteLine("\t Voc√™ pode ajuda-lo a encontrar?\n");
+                    Console.WriteLine("\t ApÛs uns 3 minutos entediado no quintal... Marik finalmente decidiu u.u\n");
+                    Console.WriteLine("\t Ele ir· atr·s do seu brinquedo favorito!\n");
+                    Console.WriteLine("\t VocÍ pode ajuda-lo a encontrar?\n");
                     Console.WriteLine("\t\n");
                     Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#");
                     Console.ForegroundColor = opinioesCor;
@@ -121,8 +116,8 @@ namespace ConsoleApp3
                         Console.ForegroundColor = caixaTextoCor;
                         Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
                         Console.WriteLine("\t Vamos entrando na casa, pela sala principal...\n");
-                        Console.WriteLine("\t Ah... Cuidado para Marik n√£o acabar se entretendo com outros moveis da casa!\n");
-                        Console.WriteLine("\t Isto pode acabar deixando seus donos furiosos ¬¨¬¨\n");
+                        Console.WriteLine("\t Ah... Cuidado para Marik n„o acabar se entretendo com outros moveis da casa!\n");
+                        Console.WriteLine("\t Isto pode acabar deixando seus donos furiosos ¨¨\n");
                         Console.WriteLine("\t\n");
                         Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#");
                         Console.ForegroundColor = opinioesCor;
@@ -131,7 +126,7 @@ namespace ConsoleApp3
                     }
                     else if (iniciar != "S" && iniciar != "N")
                     {
-                        Console.WriteLine("\tOp√ß√£o invalida! Tente novamente...");
+                        Console.WriteLine("\tOpÁ„o invalida! Tente novamente...");
                         Console.Beep();
                         System.Threading.Thread.Sleep(2000);
                     }
@@ -140,30 +135,30 @@ namespace ConsoleApp3
                         Console.Clear();
                         Console.ForegroundColor = caixaTextoCor;
                         Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
-                        Console.WriteLine("\t Vi que n√£o queres ajudar... Tudo bem! Voc√™ n√£o t√™m op√ß√£o na verdade... Ter√°s que ajuda-lo!\n");
+                        Console.WriteLine("\t Vi que n„o queres ajudar... Tudo bem! VocÍ n„o tÍm opÁ„o na verdade... Ter·s que ajuda-lo!\n");
                         Console.WriteLine("\t Vamos entrando na casa, pela sala principal...\n");
-                        Console.WriteLine("\t Ah... Cuidado para Marik n√£o acabar se entretendo com outros moveis da casa!\n");
-                        Console.WriteLine("\t Isto pode acabar deixando seus donos furiosos ¬¨¬¨\n");
+                        Console.WriteLine("\t Ah... Cuidado para Marik n„o acabar se entretendo com outros moveis da casa!\n");
+                        Console.WriteLine("\t Isto pode acabar deixando seus donos furiosos ¨¨\n");
                         Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#");
                         Console.ForegroundColor = opinioesCor;
                         Console.WriteLine("\tContinuar - Pressione Enter!");
                         Console.ReadKey();
                     }
                 }
-                //Fim - Introdu√ß√£o.
+                //Fim - IntroduÁ„o.
 
-                //Come√ßa a busca!
-                while (briquedoPerdido == true) // Enquanto o brinquedo n√£o for encontrado... Ele ir√° verificar o comodo em que estamos!
+                //ComeÁa a busca!
+                while (briquedoPerdido == true)
                 {
                     // Verifica o comodo atual, cujo jogador se encontra no jogo!
                     if (comodoAtual == 7)// Sala Inicial
                     {
-                        opcao = ""; // A op√ß√£o √© declarada como "" ao entrar em qualquer comodo, para que o jogador possa informar uma op√ß√£o valida (de acordo com o comodo atual)
-                        while (opcao != "A" && opcao != "B" && opcao != "C" && opcao != "D" && opcao != "E") // Enquanto o jogador n√£o escolher uma das op√ß√µes oferecidas o jogo n√£o mudar√° de 'tela'.
+                        opcao = "";
+                        while (opcao != "A" && opcao != "B" && opcao != "C" && opcao != "D" && opcao != "E")
                         {
                             Console.Clear();
                             Console.ForegroundColor = pontuacaoCor;
-                            Console.WriteLine("\tPontua√ß√£o: " + pontos + "\n\n");
+                            Console.WriteLine("\tPontuaÁ„o: " + pontos + "\n\n");
                             Console.ForegroundColor = caixaTextoCor;
                             Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
                             Console.WriteLine("\t Muito bem estamos na sala principal\n");
@@ -173,17 +168,17 @@ namespace ConsoleApp3
                             Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
                             Console.ForegroundColor = opinioesCor;
                             Console.WriteLine("Sala de TV (A)\t\tQuarto (B)\t\tEscritorio (C)\t\tBanheiro Principal (D)\t\tCozinha (E)\n");
-                            opcao = Console.ReadLine().ToUpper(); // Transforma o que foi digitado em letras maiusculas.
+                            opcao = Console.ReadLine().ToUpper();
 
-                            if (opcao != "A" && opcao != "B" && opcao != "C" && opcao != "D" && opcao != "E") // Caso o jogador informe outro valor, que n√£o seja os pedidos.
+                            if (opcao != "A" && opcao != "B" && opcao != "C" && opcao != "D" && opcao != "E")
                             {
-                                Console.WriteLine("\tOp√ß√£o invalida! Tente novamente...");
-                                Console.Beep(); // Emite o som de erro!
-                                System.Threading.Thread.Sleep(2000); // Aguarda por 2 segundos para que o jogador possa ver a mensagem de error.
+                                Console.WriteLine("\tOpÁ„o invalida! Tente novamente...");
+                                Console.Beep();
+                                System.Threading.Thread.Sleep(2000);
                             }
-                            else // Caso o jogador informe um a op√ß√£o valida!
+                            else // Caso o jogador informe um a opÁ„o valida!
                             {
-                                // Verifica a op√ß√£o e atualiza o comodo atual do jogador!
+                                // Verifica a opÁ„o e atualiza o comodo atual do jogador!
                                 if (opcao == "A")
                                 {
                                     comodoAtual = 2;
@@ -214,18 +209,18 @@ namespace ConsoleApp3
                         if (comodos[comodoAtual] == "P")
                         {
                             //Achou o brinquedo!
-                            briquedoPerdido = false; // Quando o brinquedo √© encontrado, √© declarado que o brinquedo n√£o est√° mais perdido.
+                            briquedoPerdido = false;
 
                         }
                         else if (comodos[comodoAtual] == "N")
                         {
-                            //Voc√™ j√° entrou neste movel, por tanto n√£o ir√° perder ponto!
+                            //VocÍ j· entrou neste movel, por tanto n„o ir· perder ponto!
                         }
                         else
                         {
 
-                            pontos = pontos - 15; // O jogador perder√° pontos por ter entrado neste comodo, caso o item n√£o se encontre aqui...
-                            comodos[comodoAtual] = "N"; // Ir√° atualizar a informa√ß√£o refente a este comodo com o "N", para que o jogo entenda que o jogador j√° visitou aqui e 'n√£o perder√° mais pontos neste comodo'
+                            pontos = pontos - 15;
+                            comodos[comodoAtual] = "N";
 
                             //Imagem do Livro e Mensagem abaixo
                             Console.Clear();
@@ -241,10 +236,10 @@ namespace ConsoleApp3
                             Console.WriteLine("\t                                                              ");
                             Console.ForegroundColor = caixaTextoCor;
                             Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
-                            Console.WriteLine("\t Marik, nosso pai parece ter descoberto algo incrivel, em? Mas, o que ser√° isto (Sentido da vida)?\n");
-                            Console.WriteLine("\t Ei.. Marik!? Marik! O que voc√™ pretende fazer!? Espere! Isto n√£o √© um briqued... Deixa pra l√° u.u\n");
-                            Console.WriteLine("\t Tomar√° que n√£o tenhamos destruido nada t√£o importante... Se n√£o, nosso pai ficar√° brabo x.x\n");
-                            Console.WriteLine("\t Perdemos 15 pontos pela bagun√ßa :x\n");
+                            Console.WriteLine("\t Marik, nosso pai parece ter descoberto algo incrivel, em? Mas, o que ser· isto (Sentido da vida)?\n");
+                            Console.WriteLine("\t Ei.. Marik!? Marik! O que vocÍ pretende fazer!? Espere! Isto n„o È um briqued... Deixa pra l· u.u\n");
+                            Console.WriteLine("\t Tomar· que n„o tenhamos destruido nada t„o importante... Se n„o, nosso pai ficar· brabo x.x\n");
+                            Console.WriteLine("\t Perdemos 15 pontos pela bagunÁa :x\n");
                             Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
                             Console.ForegroundColor = opinioesCor;
                             Console.WriteLine("\tContinuar - Pressione Enter!");
@@ -254,16 +249,16 @@ namespace ConsoleApp3
                         //O jogo continua...
                         if (briquedoPerdido == true)
                         {
-                            //Mensagem para verificar o proximo local que ir√°s:
+                            //Mensagem para verificar o proximo local que ir·s:
                             while (opcao != "A")
                             {
                                 Console.Clear();
                                 Console.ForegroundColor = pontuacaoCor;
-                                Console.WriteLine("\tPontua√ß√£o: " + pontos + "\n\n");
+                                Console.WriteLine("\tPontuaÁ„o: " + pontos + "\n\n");
                                 Console.ForegroundColor = caixaTextoCor;
                                 Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
-                                Console.WriteLine("\t Parece que teremos problemas... ¬¨¬¨\n");
-                                Console.WriteLine("\t √â melhor acharmos logo este brinquedo, antes que Marik destrua a casa u.u\n");
+                                Console.WriteLine("\t Parece que teremos problemas... ¨¨\n");
+                                Console.WriteLine("\t … melhor acharmos logo este brinquedo, antes que Marik destrua a casa u.u\n");
                                 Console.WriteLine("\t Para onde deveriamos ir agora?\n");
                                 Console.WriteLine("\t\n");
                                 Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
@@ -273,7 +268,7 @@ namespace ConsoleApp3
 
                                 if (opcao != "A")
                                 {
-                                    Console.WriteLine("\tOp√ß√£o invalida! Tente novamente...");
+                                    Console.WriteLine("\tOpÁ„o invalida! Tente novamente...");
                                     Console.Beep();
                                     System.Threading.Thread.Sleep(2000);
                                 }
@@ -299,7 +294,7 @@ namespace ConsoleApp3
                         }
                         else if (comodos[comodoAtual] == "N")
                         {
-                            //Voc√™ j√° entrou neste movel, por tanto n√£o ir√° perder ponto!
+                            //VocÍ j· entrou neste movel, por tanto n„o ir· perder ponto!
                         }
                         else
                         {
@@ -322,10 +317,10 @@ namespace ConsoleApp3
                             Console.WriteLine("\t                                                            ");
                             Console.ForegroundColor = caixaTextoCor;
                             Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
-                            Console.WriteLine("\t Parece que deixaram a tampa da privada levantada... ¬¨¬¨\n");
-                            Console.WriteLine("\t Ei.. Marik!? Marik! Isso n√£o √© para beb... Deixa pra l√° u.u\n");
-                            Console.WriteLine("\t Ainda derramou um pouco da √°gua da privada pelo banheiro...\n");
-                            Console.WriteLine("\t Perdemos 2 pontos pela bagun√ßa :x\n");
+                            Console.WriteLine("\t Parece que deixaram a tampa da privada levantada... ¨¨\n");
+                            Console.WriteLine("\t Ei.. Marik!? Marik! Isso n„o È para beb... Deixa pra l· u.u\n");
+                            Console.WriteLine("\t Ainda derramou um pouco da ·gua da privada pelo banheiro...\n");
+                            Console.WriteLine("\t Perdemos 2 pontos pela bagunÁa :x\n");
                             Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
                             Console.ForegroundColor = opinioesCor;
                             Console.WriteLine("\tContinuar - Pressione Enter!");
@@ -335,16 +330,16 @@ namespace ConsoleApp3
                         //O jogo continua...
                         if (briquedoPerdido == true)
                         {
-                            //Mensagem para verificar o proximo local que ir√°s:
+                            //Mensagem para verificar o proximo local que ir·s:
                             while (opcao != "A")
                             {
                                 Console.Clear();
                                 Console.ForegroundColor = pontuacaoCor;
-                                Console.WriteLine("\tPontua√ß√£o: " + pontos + "\n\n");
+                                Console.WriteLine("\tPontuaÁ„o: " + pontos + "\n\n");
                                 Console.ForegroundColor = caixaTextoCor;
                                 Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
-                                Console.WriteLine("\t Parece que n√£o teremos tantos problemas, neste caso.\n");
-                                Console.WriteLine("\t Mas, √© melhor acharmos logo este brinquedo, antes que Marik destrua a casa u.u\n");
+                                Console.WriteLine("\t Parece que n„o teremos tantos problemas, neste caso.\n");
+                                Console.WriteLine("\t Mas, È melhor acharmos logo este brinquedo, antes que Marik destrua a casa u.u\n");
                                 Console.WriteLine("\t Para onde deveriamos ir agora?\n");
                                 Console.WriteLine("\t\n");
                                 Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
@@ -354,7 +349,7 @@ namespace ConsoleApp3
 
                                 if (opcao != "A")
                                 {
-                                    Console.WriteLine("\tOp√ß√£o invalida! Tente novamente...");
+                                    Console.WriteLine("\tOpÁ„o invalida! Tente novamente...");
                                     Console.Beep();
                                     System.Threading.Thread.Sleep(2000);
                                 }
@@ -380,7 +375,7 @@ namespace ConsoleApp3
                         }
                         else if (comodos[comodoAtual] == "N")
                         {
-                            //Voc√™ j√° entrou neste movel, por tanto n√£o ir√° perder ponto!
+                            //VocÍ j· entrou neste movel, por tanto n„o ir· perder ponto!
                         }
                         else
                         {
@@ -401,10 +396,10 @@ namespace ConsoleApp3
                             Console.WriteLine("\t                                                               ");
                             Console.ForegroundColor = caixaTextoCor;
                             Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
-                            Console.WriteLine("\t Olha Marik! Est√° passando o nosso filme novamente (Resgate Abaixo de Zero) *-*\n");
-                            Console.WriteLine("\t Ei.. Marik!? Marik! N√£o se aproxima! Voc√™ pode derrub... Deixa pra l√° u.u\n");
-                            Console.WriteLine("\t Acho que isto vai deixar nossos pais muito irritado... Al√©m de dar um belo prejuizo x.x\n");
-                            Console.WriteLine("\t Perdemos 20 pontos pela bagun√ßa :x\n");
+                            Console.WriteLine("\t Olha Marik! Est· passando o nosso filme novamente (Resgate Abaixo de Zero) *-*\n");
+                            Console.WriteLine("\t Ei.. Marik!? Marik! N„o se aproxima! VocÍ pode derrub... Deixa pra l· u.u\n");
+                            Console.WriteLine("\t Acho que isto vai deixar nossos pais muito irritado... AlÈm de dar um belo prejuizo x.x\n");
+                            Console.WriteLine("\t Perdemos 20 pontos pela bagunÁa :x\n");
                             Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
                             Console.ForegroundColor = opinioesCor;
                             Console.WriteLine("\tContinuar - Pressione Enter!");
@@ -414,16 +409,16 @@ namespace ConsoleApp3
                         //O jogo continua...
                         if (briquedoPerdido == true)
                         {
-                            //Mensagem para verificar o proximo local que ir√°s:
+                            //Mensagem para verificar o proximo local que ir·s:
                             while (opcao != "A")
                             {
                                 Console.Clear();
                                 Console.ForegroundColor = pontuacaoCor;
-                                Console.WriteLine("\tPontua√ß√£o: " + pontos + "\n\n");
+                                Console.WriteLine("\tPontuaÁ„o: " + pontos + "\n\n");
                                 Console.ForegroundColor = caixaTextoCor;
                                 Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
-                                Console.WriteLine("\t Parece que teremos problemas... ¬¨¬¨\n");
-                                Console.WriteLine("\t √â melhor acharmos logo este brinquedo, antes que Marik destrua a casa u.u\n");
+                                Console.WriteLine("\t Parece que teremos problemas... ¨¨\n");
+                                Console.WriteLine("\t … melhor acharmos logo este brinquedo, antes que Marik destrua a casa u.u\n");
                                 Console.WriteLine("\t Para onde deveriamos ir agora?\n");
                                 Console.WriteLine("\t\n");
                                 Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
@@ -433,7 +428,7 @@ namespace ConsoleApp3
 
                                 if (opcao != "A")
                                 {
-                                    Console.WriteLine("\tOp√ß√£o invalida! Tente novamente...");
+                                    Console.WriteLine("\tOpÁ„o invalida! Tente novamente...");
                                     Console.Beep();
                                     System.Threading.Thread.Sleep(2000);
                                 }
@@ -459,7 +454,7 @@ namespace ConsoleApp3
                         }
                         else if (comodos[comodoAtual] == "N")
                         {
-                            //Voc√™ j√° entrou neste movel, por tanto n√£o ir√° perder ponto!
+                            //VocÍ j· entrou neste movel, por tanto n„o ir· perder ponto!
                         }
                         else
                         {
@@ -487,10 +482,10 @@ namespace ConsoleApp3
                             Console.WriteLine("\t                                                                 ");
                             Console.ForegroundColor = caixaTextoCor;
                             Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
-                            Console.WriteLine("\t Olha Marik! A cama dos nossos pais! √â um tanto atraente, em? Acho que podemos subir um pouco u.u\n");
-                            Console.WriteLine("\t Mas, s√≥ vamos deitar um pouco Marik, okay!? Marik? Isto n√£o √© pra cav... Deixa pra l√° u.u\n");
-                            Console.WriteLine("\t Talvez a mam√£e n√£o perceba estes buracos do lado dela...\n");
-                            Console.WriteLine("\t Perdemos 10 pontos pela bagun√ßa :x\n");
+                            Console.WriteLine("\t Olha Marik! A cama dos nossos pais! … um tanto atraente, em? Acho que podemos subir um pouco u.u\n");
+                            Console.WriteLine("\t Mas, sÛ vamos deitar um pouco Marik, okay!? Marik? Isto n„o È pra cav... Deixa pra l· u.u\n");
+                            Console.WriteLine("\t Talvez a mam„e n„o perceba estes buracos do lado dela...\n");
+                            Console.WriteLine("\t Perdemos 10 pontos pela bagunÁa :x\n");
                             Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
                             Console.ForegroundColor = opinioesCor;
                             Console.WriteLine("\tContinuar - Pressione Enter!");
@@ -500,16 +495,16 @@ namespace ConsoleApp3
                         //O jogo continua...
                         if (briquedoPerdido == true)
                         {
-                            //Mensagem para verificar o proximo local que ir√°s:
+                            //Mensagem para verificar o proximo local que ir·s:
                             while (opcao != "A" && opcao != "B")
                             {
                                 Console.Clear();
                                 Console.ForegroundColor = pontuacaoCor;
-                                Console.WriteLine("\tPontua√ß√£o: " + pontos + "\n\n");
+                                Console.WriteLine("\tPontuaÁ„o: " + pontos + "\n\n");
                                 Console.ForegroundColor = caixaTextoCor;
                                 Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
-                                Console.WriteLine("\t Parece que teremos problemas... ¬¨¬¨\n");
-                                Console.WriteLine("\t √â melhor acharmos logo este brinquedo, antes que Marik destrua a casa u.u\n");
+                                Console.WriteLine("\t Parece que teremos problemas... ¨¨\n");
+                                Console.WriteLine("\t … melhor acharmos logo este brinquedo, antes que Marik destrua a casa u.u\n");
                                 Console.WriteLine("\t Para onde deveriamos ir agora?\n");
                                 Console.WriteLine("\t\n");
                                 Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
@@ -519,7 +514,7 @@ namespace ConsoleApp3
 
                                 if (opcao != "A" && opcao != "B")
                                 {
-                                    Console.WriteLine("\tOp√ß√£o invalida! Tente novamente...");
+                                    Console.WriteLine("\tOpÁ„o invalida! Tente novamente...");
                                     Console.Beep();
                                     System.Threading.Thread.Sleep(2000);
                                 }
@@ -550,7 +545,7 @@ namespace ConsoleApp3
                         }
                         else if (comodos[comodoAtual] == "N")
                         {
-                            //Voc√™ j√° entrou neste movel, por tanto n√£o ir√° perder ponto!
+                            //VocÍ j· entrou neste movel, por tanto n„o ir· perder ponto!
                         }
                         else
                         {
@@ -573,10 +568,10 @@ namespace ConsoleApp3
                             Console.WriteLine("\t                                                            ");
                             Console.ForegroundColor = caixaTextoCor;
                             Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
-                            Console.WriteLine("\t Parece que deixaram a tampa da privada levantada... ¬¨¬¨\n");
-                            Console.WriteLine("\t Ei.. Marik!? Marik! Isso n√£o √© para beb... Deixa pra l√° u.u\n");
-                            Console.WriteLine("\t Ainda derramou um pouco da √°gua da privada pelo banheiro...\n");
-                            Console.WriteLine("\t Perdemos 2 pontos pela bagun√ßa :x\n");
+                            Console.WriteLine("\t Parece que deixaram a tampa da privada levantada... ¨¨\n");
+                            Console.WriteLine("\t Ei.. Marik!? Marik! Isso n„o È para beb... Deixa pra l· u.u\n");
+                            Console.WriteLine("\t Ainda derramou um pouco da ·gua da privada pelo banheiro...\n");
+                            Console.WriteLine("\t Perdemos 2 pontos pela bagunÁa :x\n");
                             Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
                             Console.ForegroundColor = opinioesCor;
                             Console.WriteLine("\tContinuar - Pressione Enter!");
@@ -586,16 +581,16 @@ namespace ConsoleApp3
                         //O jogo continua...
                         if (briquedoPerdido == true)
                         {
-                            //Mensagem para verificar o proximo local que ir√°s:
+                            //Mensagem para verificar o proximo local que ir·s:
                             while (opcao != "A")
                             {
                                 Console.Clear();
                                 Console.ForegroundColor = pontuacaoCor;
-                                Console.WriteLine("\tPontua√ß√£o: " + pontos + "\n\n");
+                                Console.WriteLine("\tPontuaÁ„o: " + pontos + "\n\n");
                                 Console.ForegroundColor = caixaTextoCor;
                                 Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
-                                Console.WriteLine("\t Parece que n√£o teremos tantos problemas, neste caso.\n");
-                                Console.WriteLine("\t Mas, √© melhor acharmos logo este brinquedo, antes que Marik destrua a casa u.u\n");
+                                Console.WriteLine("\t Parece que n„o teremos tantos problemas, neste caso.\n");
+                                Console.WriteLine("\t Mas, È melhor acharmos logo este brinquedo, antes que Marik destrua a casa u.u\n");
                                 Console.WriteLine("\t Para onde deveriamos ir agora?\n");
                                 Console.WriteLine("\t\n");
                                 Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
@@ -605,7 +600,7 @@ namespace ConsoleApp3
 
                                 if (opcao != "A")
                                 {
-                                    Console.WriteLine("\tOp√ß√£o invalida! Tente novamente...");
+                                    Console.WriteLine("\tOpÁ„o invalida! Tente novamente...");
                                     Console.Beep();
                                     System.Threading.Thread.Sleep(2000);
                                 }
@@ -631,7 +626,7 @@ namespace ConsoleApp3
                         }
                         else if (comodos[comodoAtual] == "N")
                         {
-                            //Voc√™ j√° entrou neste movel, por tanto n√£o ir√° perder ponto!
+                            //VocÍ j· entrou neste movel, por tanto n„o ir· perder ponto!
                         }
                         else
                         {
@@ -657,9 +652,9 @@ namespace ConsoleApp3
                             Console.ForegroundColor = caixaTextoCor;
                             Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
                             Console.WriteLine("\t Parece que deixaram a porta da geladeira aberta Marik... Acho que podemos fecha-la!\n");
-                            Console.WriteLine("\t H√£? O que s√£o essas cascas de banana? Marik, n√£o! Essas bananas n√£o s√£o para voc... Deixa pra l√° u.u\n");
+                            Console.WriteLine("\t H„? O que s„o essas cascas de banana? Marik, n„o! Essas bananas n„o s„o para voc... Deixa pra l· u.u\n");
                             Console.WriteLine("\t Espero que ninguem escorregue nessas cascas de banana...\n");
-                            Console.WriteLine("\t Perdemos 10 pontos pela bagun√ßa :x\n");
+                            Console.WriteLine("\t Perdemos 10 pontos pela bagunÁa :x\n");
                             Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
                             Console.ForegroundColor = opinioesCor;
                             Console.WriteLine("\tContinuar - Pressione Enter!");
@@ -669,16 +664,16 @@ namespace ConsoleApp3
                         //O jogo continua...
                         if (briquedoPerdido == true)
                         {
-                            //Mensagem para verificar o proximo local que ir√°s:
+                            //Mensagem para verificar o proximo local que ir·s:
                             while (opcao != "A" && opcao != "B")
                             {
                                 Console.Clear();
                                 Console.ForegroundColor = pontuacaoCor;
-                                Console.WriteLine("\tPontua√ß√£o: " + pontos + "\n\n");
+                                Console.WriteLine("\tPontuaÁ„o: " + pontos + "\n\n");
                                 Console.ForegroundColor = caixaTextoCor;
                                 Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
-                                Console.WriteLine("\t Parece que teremos problemas... ¬¨¬¨\n");
-                                Console.WriteLine("\t √â melhor acharmos logo este brinquedo, antes que Marik destrua a casa u.u\n");
+                                Console.WriteLine("\t Parece que teremos problemas... ¨¨\n");
+                                Console.WriteLine("\t … melhor acharmos logo este brinquedo, antes que Marik destrua a casa u.u\n");
                                 Console.WriteLine("\t Para onde deveriamos ir agora?\n");
                                 Console.WriteLine("\t\n");
                                 Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
@@ -688,7 +683,7 @@ namespace ConsoleApp3
 
                                 if (opcao != "A" && opcao != "B")
                                 {
-                                    Console.WriteLine("\tOp√ß√£o invalida! Tente novamente...");
+                                    Console.WriteLine("\tOpÁ„o invalida! Tente novamente...");
                                     Console.Beep();
                                     System.Threading.Thread.Sleep(2000);
                                 }
@@ -719,7 +714,7 @@ namespace ConsoleApp3
                         }
                         else if (comodos[comodoAtual] == "N")
                         {
-                            //Voc√™ j√° entrou neste movel, por tanto n√£o ir√° perder ponto!
+                            //VocÍ j· entrou neste movel, por tanto n„o ir· perder ponto!
                         }
                         else
                         {
@@ -741,10 +736,10 @@ namespace ConsoleApp3
                             Console.WriteLine("\t                                                             ");
                             Console.ForegroundColor = caixaTextoCor;
                             Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
-                            Console.WriteLine("\t Nada melhor do que o ambiente natural que o jardim da mam√£e consegue oferecer, em?\n");
-                            Console.WriteLine("\t Ei.. Marik!? Marik! A√≠ n√£o √© lugar para cav... Deixa pra l√° u.u\n");
-                            Console.WriteLine("\t Talvez, se n√≥s enterrarmos as flores, a mam√£e n√£o perceba...\n");
-                            Console.WriteLine("\t Perdemos 5 pontos pela bagun√ßa :x\n");
+                            Console.WriteLine("\t Nada melhor do que o ambiente natural que o jardim da mam„e consegue oferecer, em?\n");
+                            Console.WriteLine("\t Ei.. Marik!? Marik! AÌ n„o È lugar para cav... Deixa pra l· u.u\n");
+                            Console.WriteLine("\t Talvez, se nÛs enterrarmos as flores, a mam„e n„o perceba...\n");
+                            Console.WriteLine("\t Perdemos 5 pontos pela bagunÁa :x\n");
                             Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
                             Console.ForegroundColor = opinioesCor;
                             Console.WriteLine("\tContinuar - Pressione Enter!");
@@ -754,16 +749,16 @@ namespace ConsoleApp3
                         //O jogo continua...
                         if (briquedoPerdido == true)
                         {
-                            //Mensagem para verificar o proximo local que ir√°s:
+                            //Mensagem para verificar o proximo local que ir·s:
                             while (opcao != "A")
                             {
                                 Console.Clear();
                                 Console.ForegroundColor = pontuacaoCor;
-                                Console.WriteLine("\tPontua√ß√£o: " + pontos + "\n\n");
+                                Console.WriteLine("\tPontuaÁ„o: " + pontos + "\n\n");
                                 Console.ForegroundColor = caixaTextoCor;
                                 Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
-                                Console.WriteLine("\t Parece que n√£o teremos tantos problemas, neste caso.\n");
-                                Console.WriteLine("\t Mas, √© melhor acharmos logo este brinquedo, antes que Marik destrua a casa u.u\n");
+                                Console.WriteLine("\t Parece que n„o teremos tantos problemas, neste caso.\n");
+                                Console.WriteLine("\t Mas, È melhor acharmos logo este brinquedo, antes que Marik destrua a casa u.u\n");
                                 Console.WriteLine("\t Para onde deveriamos ir agora?\n");
                                 Console.WriteLine("\t\n");
                                 Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
@@ -773,7 +768,7 @@ namespace ConsoleApp3
 
                                 if (opcao != "A")
                                 {
-                                    Console.WriteLine("\tOp√ß√£o invalida! Tente novamente...");
+                                    Console.WriteLine("\tOpÁ„o invalida! Tente novamente...");
                                     Console.Beep();
                                     System.Threading.Thread.Sleep(2000);
                                 }
@@ -795,13 +790,13 @@ namespace ConsoleApp3
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.WriteLine("\n");
                 Console.WriteLine("\t                                                 (\\_/)       ");
-                Console.WriteLine("\t                                                 (¬∞.¬∞)        ");
+                Console.WriteLine("\t                                                 (∞.∞)        ");
                 Console.WriteLine("\t                                                 o( )o        ");
                 Console.WriteLine("\t                                                  O_O         ");
                 Console.WriteLine("\t                                                              ");
                 Console.ForegroundColor = caixaTextoCor;
                 Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
-                Console.WriteLine("\t A√≠ est√° o nosso t√£o amado TED!!!\n");
+                Console.WriteLine("\t AÌ est· o nosso t„o amado TED!!!\n");
                 Console.WriteLine("\t *-*\n");
                 Console.WriteLine("\t *-*\n");
                 Console.WriteLine("\t *-*\n");
@@ -810,7 +805,7 @@ namespace ConsoleApp3
                 Console.WriteLine("\tContinuar - Pressione Enter!");
                 Console.ReadKey();
 
-                //Varia√ß√µes de Finais:
+                //VariaÁıes de Finais:
                 if (pontos >= 80)
                 {
                     //Melhor final:
@@ -823,13 +818,13 @@ namespace ConsoleApp3
                     Console.WriteLine("\t                                             (_/       \\_)   ");
                     Console.WriteLine("\t                                                              ");
                     Console.ForegroundColor = pontuacaoCor;
-                    Console.WriteLine("\tPontua√ß√£o: " + pontos + "\n\n");
+                    Console.WriteLine("\tPontuaÁ„o: " + pontos + "\n\n");
                     Console.ForegroundColor = caixaTextoCor;
                     Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
                     Console.WriteLine("\t Parece que temos um Sherlock Holmes aqui, em?\n");
                     Console.WriteLine("\t Realmente incrivel!\n");
-                    Console.WriteLine("\t Gra√ßas a voc√™, Marik ganhou um ossinho para brincar!\n");
-                    Console.WriteLine("\t E claro... Seus donos est√£o orgulhosos do seu melhor amigo ;)\n");
+                    Console.WriteLine("\t GraÁas a vocÍ, Marik ganhou um ossinho para brincar!\n");
+                    Console.WriteLine("\t E claro... Seus donos est„o orgulhosos do seu melhor amigo ;)\n");
                     Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
                 }
                 else if (pontos >= 60)
@@ -837,13 +832,13 @@ namespace ConsoleApp3
                     //Bom final
                     Console.Clear();
                     Console.ForegroundColor = pontuacaoCor;
-                    Console.WriteLine("\tPontua√ß√£o: " + pontos + "\n\n");
+                    Console.WriteLine("\tPontuaÁ„o: " + pontos + "\n\n");
                     Console.ForegroundColor = caixaTextoCor;
                     Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
-                    Console.WriteLine("\t Muito bem! N√£o pudemos salvar a casa... Mas, pelo menos, ainda h√° casa, n√©?\n");
-                    Console.WriteLine("\t Gra√ßas a voc√™, podemos dizer que o estrago n√£o foi t√£o grande!\n");
+                    Console.WriteLine("\t Muito bem! N„o pudemos salvar a casa... Mas, pelo menos, ainda h· casa, nÈ?\n");
+                    Console.WriteLine("\t GraÁas a vocÍ, podemos dizer que o estrago n„o foi t„o grande!\n");
                     Console.WriteLine("\t Mas, mesmo assim... Na proxima vez, vamos tentar manter a casa em ordem...\n");
-                    Console.WriteLine("\t Quem sabe o nosso amigo n√£o ganha at√© um novo brinquedinho ;)\n");
+                    Console.WriteLine("\t Quem sabe o nosso amigo n„o ganha atÈ um novo brinquedinho ;)\n");
                     Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
                 }
                 else
@@ -851,13 +846,13 @@ namespace ConsoleApp3
                     //Final Ruim :x
                     Console.Clear();
                     Console.ForegroundColor = pontuacaoCor;
-                    Console.WriteLine("\tPontua√ß√£o: " + pontos + "\n\n");
+                    Console.WriteLine("\tPontuaÁ„o: " + pontos + "\n\n");
                     Console.ForegroundColor = caixaTextoCor;
                     Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
                     Console.WriteLine("\t Acho melhor a gente se esconder, em?\n");
                     Console.WriteLine("\t Antes que os nossos pais cheguem em casa!\n");
                     Console.WriteLine("\t Quero dizer... No que restou dela :x\n");
-                    Console.WriteLine("\t Vamos atr√°s de Xandelinha e coloca-la no local do crime... Pelo menos n√≥s n√£o levamos a culpa ^^\n");
+                    Console.WriteLine("\t Vamos atr·s de Xandelinha e coloca-la no local do crime... Pelo menos nÛs n„o levamos a culpa ^^\n");
                     Console.WriteLine("\t#--------------------------------------------------------------------------------------------------#\n");
                 }
                 Console.ForegroundColor = opinioesCor;
@@ -886,7 +881,7 @@ namespace ConsoleApp3
                     }
                     else if (iniciar != "S" && iniciar != "N")
                     {
-                        Console.WriteLine("\tOp√ß√£o invalida! Tente novamente...");
+                        Console.WriteLine("\tOpÁ„o invalida! Tente novamente...");
                         Console.Beep();
                         System.Threading.Thread.Sleep(2000);
                     }

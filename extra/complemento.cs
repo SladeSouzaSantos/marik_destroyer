@@ -1,0 +1,52 @@
+Console.BackgroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.Clear();                
+                Console.WriteLine("\t\t\t‘  ‘. ‘‘  ‘  ‘. ‘‘  ‘  ‘. ‘‘  ‘  ‘. ‘‘  ‘  ‘. ‘‘ ÐÐÐÐ.. ‘‘  ‘  ‘. ‘‘  ‘  ‘‘");
+                Console.WriteLine("\t\t\t .‘  ‘  ‘‘ .‘  ‘  ‘‘ .‘  ‘  ‘‘ .‘  ‘  ‘‘ .‘  ‘ Ð‘‘ .ÐÐ ‘  ‘‘ .‘  ‘  ‘‘ .‘  ");
+                Console.WriteLine("\t\t\t‘  ‘. ‘‘  ‘  ‘. ‘‘  ‘  ‘. ‘‘  ‘  ‘. ‘‘  ‘  ‘‘J‘‘  ‘ ÐÐ. ‘‘  ‘  ‘. ‘‘  ‘  ‘‘");
+                Console.WriteLine("\t\t\t ‘.  .  .. ‘.  .  .. ‘.  .  .. ‘.  .  .‘@Ð‘Ð*.  .. ‘ÐÐ .  .. ‘.  .  .. ‘.  ");
+                Console.WriteLine("\t\t\t .‘  ‘  ‘‘ .‘  ‘  ‘‘ .‘  ‘  ‘‘ .‘  ‘  ÐÐÐÐ‘  ‘  ‘‘ ÐÐÐÐÐWÐ‘‘ .‘  ‘  ‘‘ .‘  ");
+                Console.WriteLine("\t\t\t‘  ‘. ‘‘  ‘  ‘. ‘‘  ‘  ‘. ‘‘  ‘  ‘.3ÐÐÐÐÐÐÐ‘. ‘‘  ‘  ‘. Ð.  ‘  ‘. ‘‘  ‘  ‘‘");
+                Console.WriteLine("\t\t\t .‘  ‘  ‘‘ .‘  ‘  ‘‘ .‘  ‘  ‘‘ .‘'ÐÐÐÐÐÐÐÐ‘  ‘  ‘‘ .‘ W‘  ‘‘ .‘  ‘  ‘‘ .‘  ");
+                Console.WriteLine("\t\t\t‘  ‘. ‘‘  ‘  ‘. ‘‘  ‘  ‘. .''ÐÐÐÐÐÐÐÐÐÐÐÐÐ*‘. ‘‘  ‘  ‘. ‘‘  ‘  ‘. ‘‘  ‘  ‘‘");
+                Console.WriteLine("\t\t\t ‘‘  ‘  ‘‘ ‘‘  ‘  ‘‘ ‘‘  ‘  ÐÐÐÐÐÐÐÐÐÐÐÐÐ.‘  ‘  ‘‘ ‘Ð  ‘  ‘‘ ‘‘  ‘  ‘‘ ‘‘  ");
+                Console.WriteLine("\t\t\t .‘  ‘  ‘‘ .‘  ‘  ‘‘ .‘  ‘  ‘, WÐÐÐÐÐÐÐÐ .‘  ‘  ‘‘%Ð‘  ‘  ‘‘ .‘  ‘  ‘‘ .‘  ");
+                Console.WriteLine("\t\t\t‘  ‘. ‘‘  ‘  ‘. ‘‘  ‘  ‘. ‘.ÐÐÐÐÐÐÐÐÐÐÐÐÐ  ‘. ‘‘  ‘ÐJ‘. ‘‘  ‘  ‘. ‘‘  ‘  ‘‘");
+                Console.WriteLine("\t\t\t .‘  ‘  ‘‘ .‘  ‘  ‘‘ .‘  .ÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐ ‘  ‘‘ Ð‘  ‘  ‘‘ .‘  ‘  ‘‘ .‘  ");
+                Console.WriteLine("\t\t\t‘  ‘. ‘‘  ‘  ‘. ‘ÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐ‘ ‘‘  Ð  ‘. ‘‘  ‘  ‘. ‘‘  ‘  ‘‘");
+                Console.WriteLine("\t\t\t .‘  ‘  ‘‘ .‘  ‘  ‘‘ÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐ  ‘Ð$.‘  ‘  ‘‘ .‘  ‘  ‘‘ .‘  ");
+                Console.WriteLine("\t\t\t .‘  ‘  ‘‘ .‘  ‘  ‘‘ .ÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐ ‘W .‘  ‘  ‘‘ .‘  ‘  ‘‘ .‘  ");
+                Console.WriteLine("\t\t\t‘  ‘. ‘‘  ‘  ‘. ‘‘  ‘  ‘. ‘5ÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐ*ÐÐ‘  ‘. ‘‘  ‘  ‘. ‘‘  ‘  ‘‘");
+                Console.WriteLine("\t\t\t .‘  ‘  ‘‘ .‘  ‘  ‘‘ .‘  ‘  ‘.ÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐ‘ .‘  ‘  ‘‘ .‘  ‘  ‘‘ .‘  ");
+                Console.WriteLine("\t\t\t‘  ‘. ‘‘  ‘  ‘. ‘‘  ‘  ‘. ‘‘  ‘ÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐÐ ‘  ‘. ‘‘  ‘  ‘. ‘‘  ‘  ‘‘");
+                Console.WriteLine("\t\t\t ‘‘  ‘  ‘‘ ‘‘  ‘  ‘‘ ‘‘  ‘  ‘‘ ‘‘  ‘AÐÐÐÐÐÐÐÐÐÐ ‘‘ ‘‘  ‘  ‘‘ ‘‘  ‘  ‘‘ ‘‘  ");
+                Console.WriteLine("\t\t\t .‘  ‘  ‘‘ .‘  ‘  ‘‘ .‘  ‘  ‘‘ .‘  ‘ ÐÐÐÐÐÐÐÐÐ  ‘‘ .‘  ‘  ‘‘ .‘  ‘  ‘‘ .‘  ");
+                Console.WriteLine("\t\t\t‘  ‘. ‘‘  ‘  ‘. ‘‘  ‘  ‘. ‘‘  ‘  ‘. ‘‘  ‘ÐÐÐÐ ‘‘  ‘  ‘. ‘‘  ‘  ‘. ‘‘  ‘  ‘‘");
+                Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                Console.WriteLine("\t\t\t\t\t\t**");
+                Console.WriteLine("\t\t\t\t\t\t##                                ##");
+                Console.WriteLine("\n\t\t\t\t\t\t\tMARIK DESTROYER!!!\n");
+                Console.WriteLine("\t\t\t\t\t\t##                                ##");
+                Console.WriteLine("\t\t\t\t\t\t**");
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine("\t\t\t\t\t\t         Pressione Enter!");
+                Console.ReadKey();
+
+                Console.BackgroundColor = ConsoleColor.Black;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
